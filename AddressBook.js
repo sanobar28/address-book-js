@@ -129,12 +129,23 @@ class AddressBook {
 
 //creating an instance and giving contact details
 try {
-    let contact = new AddressBook("Priya", "Bhagat", "tilakpark", "Sangli", "Maharashtra", "413004",
-        "8958268940", "bhagatPriya@gmail.com");
-    console.log(contact.toString());
-    let contact1 = new AddressBook("Neha", "Patil", "modikhana", "Nagpur", "Maharashtra", "412002",
-        "7790368980", "nehapatil@gmail.com");
-    console.log(contact1.toString());
+    let AddressBookArray = new Array();
+    AddressBookArray.push(new AddressBook("Priya", "Bhagat", "tilakpark", "Sangli", "Maharashtra", "413004",
+        "8958268940", "bhagatPriya@gmail.com"));
+
+    AddressBookArray.push(new AddressBook("Neha", "Patil", "modikhana", "Nagpur", "Maharashtra", "412002",
+        "7790368980", "nehapatil@gmail.com"));
+
+    AddressBookArray.push(new AddressBook("Phreya", "Mule", "dawatChouk", "Pune", "Maharashtra", "414007",
+        "9088373499", "muleshreya@gmail.com"));
+
+    AddressBookArray.push(new AddressBook("Payal", "Giri", "Kothrud", "Pune", "Maharashtra", "413007",
+        "8878368999", "payalgiri@gmail.com"));
+
+    AddressBookArray.push(new AddressBook("Soham", "deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
+        "7090355988", "sohamdeshmukh@gmail.com"));
+        
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
     console.log(e);
 }
