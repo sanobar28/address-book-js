@@ -153,7 +153,13 @@ try {
    //display updated contacts   
    console.log(" updated Contact Details");
    AddressBookArray.forEach((contact) => console.log(contact.toString()));
-   
+
+    // Delete an element from an array
+    let index = AddressBookArray.findIndex(contact => contact.firstName == "Payal");
+    AddressBookArray.splice(index, 3);
+    console.log("contacts after being deleted");
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+       
 } catch (e) {
     console.log(e);
 }
