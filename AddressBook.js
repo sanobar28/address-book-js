@@ -144,22 +144,33 @@ try {
 
     AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
         "7090355988", "sohamdeshmukh@gmail.com"));
-        
-   //finding Contact using name
-   let check = AddressBookArray.findIndex(contact => contact.firstName == "Neha");
-   //updating the contact detail
-   AddressBookArray[check].zip = "412005";
 
-   //display updated contacts   
-   console.log(" updated Contact Details");
-   AddressBookArray.forEach((contact) => console.log(contact.toString()));
+    //finding Contact using name
+    let check = AddressBookArray.findIndex(contact => contact.firstName == "Neha");
+    //updating the contact detail
+    AddressBookArray[check].zip = "412005";
+
+    //display updated contacts   
+    console.log(" updated Contact Details");
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
     // Delete an element from an array
     let index = AddressBookArray.findIndex(contact => contact.firstName == "Payal");
     AddressBookArray.splice(index, 3);
     console.log("contacts after being deleted");
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
-       
+
+    // find total number of contacts
+    var totalContacts = 0;
+
+    function findtotalContacts(AddressBookArray) {
+        if (AddressBookArray != null)
+            totalContacts++;
+        return totalContacts;
+    }
+    AddressBookArray.reduce(findtotalContacts, 1);
+    console.log("Total number of contacts in AddressBook  : " + totalContacts);
+    
 } catch (e) {
     console.log(e);
 }
